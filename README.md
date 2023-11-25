@@ -1,4 +1,4 @@
-# Multi-source Domain Adaptation with Interval-Valued Target Data via Fuzzy Neural Networks (UPCOMING SOON!!)
+# Multi-source Domain Adaptation with Interval-Valued Target Data via Fuzzy Neural Networks 
 This is the official site for the paper "Multi-source Domain Adaptation with Interval-Valued Target Data via Fuzzy Neural Networks". This work is done by 
 
 - Guangzhi Ma (UTS), Guangzhi.Ma@student.uts.edu.au
@@ -15,15 +15,21 @@ After you install anaconda and PyTorch, you can run codes successfully. Good luc
 # Code
 You can run 
 ```
-python main_sys.py 
+python main_select.py 
+```
+--> get Fig. 3.
+
+You can run 
+```
+python main.py --dset 'synthetic' --gpu_id 0 --batch_size 100 --max_epoch 500
 ```
 --> get results on the synthetic dataset.
 
 You can run 
 ```
-python main_weather.py 
+python main.py --dset 'weather' --gpu_id 0 --s 'OW' --t 'S' --batch_size 500 --max_epoch 100 
 ```
---> get results on the weather dataset.
+--> get results on the weather dataset of task 'OW to S'.
 
 
 # Acknowledgment
