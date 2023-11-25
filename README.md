@@ -12,9 +12,6 @@ These python files require some basic scientific computing python packages, e.g.
 
 After you install anaconda and PyTorch, you can run codes successfully. Good luck!
 
-# Data download
-You can download the file datasets.zip to get all datasets used in this paper.
-
 # Code
 You can run 
 ```
