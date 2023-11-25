@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Feb  8 19:11:26 2022
-
-@author: 14025959_admin
-"""
 import torch
 from train import train_FDIM
 import random
@@ -390,7 +384,7 @@ plt.legend(['type 1', 'type 2', 'type 3', 'type 4'], loc='lower right')
 plt.ylim((0.5, 0.91))
 my_y_ticks = np.arange(0.5, 0.91, 0.05)
 plt.yticks(my_y_ticks)
-plt.savefig('/data/guanma/ml_p/FRAT/compare_fuzzy.pdf', bbox_inches='tight')
+plt.savefig('compare_fuzzy.pdf', bbox_inches='tight')
 plt.show()
 
 
