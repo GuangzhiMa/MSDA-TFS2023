@@ -29,26 +29,6 @@ class Feature(nn.Module):
 
         return feature
 
-class Feature_cmss(nn.Module):
-
-    def __init__(self, input_size, source_number):
-        super(Feature_cmss, self).__init__()
-        self.feature_classifier = nn.Sequential()
-        self.feature_classifier.add_module('f_fc1', nn.Linear(input_size, 100))
-        self.feature_classifier.add_module('f_bn1', nn.BatchNorm1d(100))
-        self.feature_classifier.add_module('f_relu1', nn.ReLU())
-        self.feature_classifier.add_module('f_drop1', nn.Dropout(0.5))
-        self.feature_classifier.add_module('f_fc2', nn.Linear(100, 100))
-        self.feature_classifier.add_module('f_bn2', nn.BatchNorm1d(100))
-        self.feature_classifier.add_module('f_relu2', nn.ReLU())
-        self.feature_classifier.add_module('f_drop2', nn.Dropout(0.5))
-        self.feature_classifier.add_module('c_fc2', nn.Linear(100, source_number))
-
-    def forward(self, input_data):
-        feature = self.feature_classifier(input_data)
-
-        return feature
-
 class Feature_s(nn.Module):
 
     def __init__(self):
@@ -141,27 +121,3 @@ class discriminator0(nn.Module):
         output = self.domain_classifier(reverse_feature)
 
         return output
-
-# class AdversarialNetwork(nn.Module):
-#     """
-#     AdversarialNetwork with a gredient reverse layer.
-#     its ``forward`` function calls gredient reverse layer first, then applies ``self.main`` module.
-#     """
-#     def __init__(self, in_feature):
-#         super(AdversarialNetwork, self).__init__()
-#         self.main = nn.Sequential(
-#             nn.Linear(in_feature, 100),
-#             nn.ReLU(inplace=True),
-#             nn.Dropout(0.5),
-#             nn.Linear(100,100),
-#             nn.ReLU(inplace=True),
-#             nn.Dropout(0.5),
-#             nn.Linear(100, 1),
-#             nn.Sigmoid()
-#         )
-#         self.grl = GradientReverseModule(lambda step: aToBSheduler(step, 0.0, 1.0, gamma=10, max_iter=10000))
-#
-#     def forward(self, x):
-#         x_ = self.grl(x)
-#         y = self.main(x_)
-#         return y
