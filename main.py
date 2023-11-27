@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Feb  8 19:11:26 2022
-
-@author: 14025959_admin
-"""
 import argparse
 import os
 import torch
